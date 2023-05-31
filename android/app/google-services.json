@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "49750662536",
+    "project_id": "pro-angler-369",
+    "storage_bucket": "pro-angler-369.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49750662536:android:4ec2cfe7162f552f086e3d",
+        "android_client_info": {
+          "package_name": "com.jacekferdynus.pro_angler"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZLwWiUhYVJlxZawspb3iiqs7WV1BKD-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
