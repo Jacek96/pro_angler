@@ -18,10 +18,28 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Builder(
+          builder: (context) {
+            if (currentIndex == 0) {
+              return const Text('Pogoda');
+            }
+            if (currentIndex == 1) {
+              return const Text('Okazy');
+            }
+            return const Text('Moje konto');
+          },
+        ),
+      ),
       body: Builder(builder: (context) {
         if (currentIndex == 0) {
-          return Center(
+          return const Center(
             child: Text('Pogoda'),
+          );
+        }
+        if (currentIndex == 1) {
+          return const Center(
+            child: Text('Okazy'),
           );
         }
         return Center(
@@ -51,6 +69,10 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.cloud),
             label: 'Pogoda',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_box_outlined),
+            label: 'Moje okazy',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
