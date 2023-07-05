@@ -43,7 +43,11 @@ class _HomePageState extends State<HomePage> {
           return const FishesPageContent();
         }
         if (currentIndex == 2) {
-          return const AddFishPageContent();
+          return AddFishPageContent(onSave: () {
+            setState(() {
+              currentIndex = 1;
+            });
+          });
         }
 
         return MyAccountPageContent(email: widget.user.email);
