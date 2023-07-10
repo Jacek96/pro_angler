@@ -1,5 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pro_angler/app/home/fishes/cubit/fishes_cubit.dart';
 
 class FishesPageContent extends StatelessWidget {
   const FishesPageContent({
@@ -8,17 +9,19 @@ class FishesPageContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-        stream: FirebaseFirestore.instance.collection('fishes').snapshots(),
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            return const Center(child: Text('Coś poszło nie tak'));
+    return BlocProvider(
+      create: (context) => FishesCubit()..start(),
+      child: BlocBuilder<FishesCubit, FishesState>(
+        builder: (context, state) {
+          if (state.errorMessage.isNotEmpty) {
+            return Center(
+                child: Text('Coś poszło nie tak: ${state.errorMessage}'));
           }
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: Text('Ładowanie'));
+          if (state.isLoading == true) {
+            return const Center(child: CircularProgressIndicator());
           }
 
-          final documents = snapshot.data!.docs;
+          final documents = state.documents;
 
           return ListView(
             children: [
@@ -37,7 +40,9 @@ class FishesPageContent extends StatelessWidget {
               ],
             ],
           );
-        });
+        },
+      ),
+    );
   }
 }
 
