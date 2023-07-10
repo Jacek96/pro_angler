@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pro_angler/app/home/fishes/cubit/fishes_cubit.dart';
+import 'package:pro_angler/app/features/home/fishes/cubit/fishes_cubit.dart';
 
 class FishesPageContent extends StatelessWidget {
   const FishesPageContent({

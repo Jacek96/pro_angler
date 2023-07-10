@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pro_angler/app/home/add_fish/add_fish_page_content.dart';
-import 'package:pro_angler/app/home/fishes/fishes_page_content.dart';
-import 'package:pro_angler/app/home/my_account/my_account_page_content.dart';
+import 'package:pro_angler/app/features/home/add_fish/add_fish_page_content.dart';
+import 'package:pro_angler/app/features/home/fishes/fishes_page_content.dart';
+import 'package:pro_angler/app/features/home/my_account/my_account_page_content.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
